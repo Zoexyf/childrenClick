@@ -1,0 +1,147 @@
+<template>
+ <div class="app-container">
+    <!-- 顶部Header区域 -->
+    <mt-header fixed title="智能儿童晨检">
+      <span slot="left" @click="goBack" v-show="flag">
+      <mt-button icon="back">
+        返回 
+      </mt-button>
+
+      </span>
+    </mt-header>
+
+
+    <!-- 中间的路由 router-view区域 -->
+
+	<transition>
+		<router-view></router-view>
+	</transition>
+
+    <!-- 底部tabber 区域 -->
+    <nav class="mui-bar mui-bar-tab">
+      <!-- R.5 将a标签改为router-link; herf属性改为 to -->
+			<router-link class="mui-tab-item-llb " to="/home">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</router-link>
+			<router-link class="mui-tab-item-llb" to="/member">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">会员</span>
+			</router-link>
+			<router-link class="mui-tab-item-llb" to="/cart">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+				<span class="mui-tab-label">购物车</span>
+			</router-link>
+			<router-link class="mui-tab-item-llb" to="/search">
+				<span class="mui-icon mui-icon-search"></span>
+				<span class="mui-tab-label">搜索</span>
+			</router-link>
+		</nav>
+
+
+    <!-- <h1>123</h1> -->
+  </div>
+
+</template>
+
+<script>
+export default{
+  data(){
+    return{
+      flag:false
+    }
+  },
+  created(){
+   this.flag=this.$route.path=="/home"||"/"?false:true;
+  },
+  methods:{
+    goBack() {
+      this.$router.go(-1)
+    }
+  },
+  watch:{
+    "$route.path":function(newVal){
+
+      if(newVal=="/home"|| newVal=="/"){
+        this.flag=false
+
+      }else{
+        this.flag=true
+      }
+
+    }
+  }
+}
+// console.log("flag的值为"+flag)
+
+</script>
+
+
+<style lang="scss" scoped>
+.mint-header{
+  background-color: rgb(255,192,0);
+}
+.mint-header.is-fixed {
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10000000001;
+    font-size:20px;
+ 
+}
+.app-container{
+  padding-top: 40px;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.v-enter{
+	opacity: 0;
+	transform: translateX(100%)
+}
+.v-leave-to{
+	opacity: 0;
+	transform: translateX(-100%);
+	position: absolute;
+
+}
+
+.v-enter-active,
+.v-leave-active{
+	transition:all 0.5s ease
+}
+
+//改类名解决tabber 无法切换的问题
+
+.mui-bar-tab .mui-tab-item-llb.mui-active {
+    color: rgb(255,192,0);
+}
+
+.mui-bar-tab .mui-tab-item-llb {
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}
+
+.mui-bar-tab .mui-tab-item-llb .mui-icon {
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.mui-bar-tab .mui-tab-item-llb .mui-icon~.mui-tab-label {
+    font-size: 11px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style>
