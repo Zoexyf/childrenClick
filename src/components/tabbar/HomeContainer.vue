@@ -4,25 +4,25 @@
         <swiper :lunbotuList="lunbotuList" :isfull="true"> </swiper>
         <!-- 九宫格到六宫格的改造 -->
      <ul class="mui-table-view mui-grid-view mui-grid-9">
-		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/bodycheck">
 		         <img src="../../images/men1.png" alt="">
-		         <div class="mui-media-body">新闻资讯</div></router-link> </li>
+		         <div class="mui-media-body">体检报告</div></router-link> </li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/photoslist">
 		          <img src="../../images/men2.png" alt="">
-		          <div class="mui-media-body">图片分享</div></router-link></li>
+		          <div class="mui-media-body">数据统计</div></router-link></li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodslist">
 		         <img src="../../images/men3.png" alt="">
-		        <div class="mui-media-body">商品购买</div></router-link></li>
+		        <div class="mui-media-body">可疑情况</div></router-link></li>
                 <!-- <p></p> -->
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		        <img src="../../images/men4.png" alt="">
-		        <div class="mui-media-body">留言专区</div></a></li>
+		        <div class="mui-media-body">接送情况</div></a></li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		         <img src="../../images/men5.png" alt="">
-		        <div class="mui-media-body">视频专区</div></a></li>
+		        <div class="mui-media-body">天气帮手</div></a></li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		        <img src="../../images/men6.png" alt="">
-		        <div class="mui-media-body">联系我们</div></a></li>
+		        <div class="mui-media-body">产品介绍</div></a></li>
 	  </ul> 
 
         <h3>HomeContainer</h3>
@@ -49,7 +49,7 @@ export default {
     methods:{
         getLunbotu(){
             //获取轮播图的方法
-            this.$http.get('https://www.easy-mock.com/mock/5d171ce3a31bc21d4c4376aa/vue.studyit.io/api/getlunbo').then(result=>{
+            this.$http.get('https://www.easy-mock.com/mock/5d29ce74575b0e0f11ff8bc5/childrenClick.com/api/getlunbo').then(result=>{
                 // console.log(result.body)
                 // console.log(result.body.status)
 

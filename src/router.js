@@ -11,21 +11,25 @@ import PhotosList from './components/photos/PhotosList.vue'
 import PhotosInfo from './components/photos/PhotosInfo.vue'
 import GoodsList from './components/goods/GoodsList.vue'
 
+import BodyCheck from './components/bodycheck/BodyCheck.vue'
+
 
 var router = new VueRouter({
   routes: [//配置路由规则的
-    {path:'/',component: HomeContainer},
+   {path:'/',component: HomeContainer},
    {path:'/home',component: HomeContainer},
    {path:'/member',component: MemberContainer},
    {path:'/cart',component: CartContainer},
-   {path:'/search',component: SearchContainer},
-   {path:'/home/newslist',component: NewsList},
-   {path:'/home/newsinfo/:id',component: NewsInfo},
+  //  {path:'/search',component: SearchContainer},
+   {path:'/newslist',component: NewsList},
+   {path:'/newsinfo/:id',component: NewsInfo},
    {path:'/home/photoslist',component: PhotosList},
    {path:'/home/photosinfo/:id', component: PhotosInfo},
    {path:'/home/goodslist', component: GoodsList},
 
   //  {path:'/home/photoslist',component:PhotosList},
+
+   {path:'/home/bodycheck',component: BodyCheck},
   ],
   linkActiveClass:'mui-active'//覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })
