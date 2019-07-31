@@ -13,6 +13,8 @@ import GoodsList from './components/goods/GoodsList.vue'
 
 import BodyCheck from './components/bodycheck/BodyCheck.vue'
 
+import ShuttleSituation from './components/shuttle/ShuttleSituation.vue'
+
 
 var router = new VueRouter({
   routes: [//配置路由规则的
@@ -30,6 +32,8 @@ var router = new VueRouter({
   //  {path:'/home/photoslist',component:PhotosList},
 
    {path:'/home/bodycheck',component: BodyCheck},
+
+   {path:'/home/shuttle',component: ShuttleSituation},
   ],
   linkActiveClass:'mui-active'//覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })

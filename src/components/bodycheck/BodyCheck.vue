@@ -51,9 +51,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 table{
    
-  margin-top: 10px;
+  
     width: 100%;
     border:1px solid;
     
@@ -65,6 +66,7 @@ table{
          height: 70px;
          line-height:70px;
         //  vertical-align: middle
+        background-color: #fff;
          
          img{
              width: 40px;
