@@ -1,7 +1,7 @@
 <template>   
-
-<table>
+<div class="checkTable">
     
+<table>
     <tr  class="titleName">
         
         <td colspan="2"><img src="../../images/picture1.png" alt="">{{ name }}的体检报告</td>
@@ -32,6 +32,9 @@
         <td><img src="../../images/hand.png" alt=""></td>
     </tr>
 </table>
+<div class="dateNow">&nbsp;体检时间：{{Date.now()|dateFormatNohm()}}</div>
+</div>
+
  
 </template>
 
@@ -51,12 +54,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.checkTable{
+    margin: 3px 5px 3px 5px
+}
 
 table{
    
   
     width: 100%;
     border:1px solid;
+    border-collapse: collapse;
+    //  margin: 20px auto;
     
   
 
@@ -65,8 +73,8 @@ table{
          font-size: 25px;
          height: 70px;
          line-height:70px;
-        //  vertical-align: middle
-        background-color: #fff;
+         //  vertical-align: middle
+         background-color: #fff;
          
          img{
              width: 40px;
@@ -81,6 +89,7 @@ table{
       height: 50px;
       width: 100%;
       background-color: rgb(255, 206, 58);
+      
       margin: 5px;
       padding: 5px;  
 
@@ -88,6 +97,8 @@ table{
         border:3px solid white;
         text-align:center;
         width:50%;
+        color:darkslategrey;
+   
         img{
             width: 100px;
             height: 100px;
@@ -98,6 +109,14 @@ table{
     }
 
 }
+.titleName{
+//    text-align: right;
+    right: 0px;
+   
+
+}
+
+
 
 
 </style>

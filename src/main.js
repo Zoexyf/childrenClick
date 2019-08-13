@@ -45,6 +45,9 @@ import moment from 'moment'
 Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:MM"){
    return  moment(dataStr).format(pattern)
 })
+Vue.filter('dateFormatNohm',function(dataStr,pattern="YYYY-MM-DD"){
+  return  moment(dataStr).format(pattern)
+})
 
 //R.1导入路由的包 
 import VueRouter from 'vue-router'

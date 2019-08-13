@@ -14,6 +14,8 @@ import GoodsList from './components/goods/GoodsList.vue'
 import BodyCheck from './components/bodycheck/BodyCheck.vue'
 
 import ShuttleSituation from './components/shuttle/ShuttleSituation.vue'
+import Weather from './components/weather/Weather.vue'
+import Introduce from './components/introduce/Introduce.vue'
 
 
 var router = new VueRouter({
@@ -34,6 +36,8 @@ var router = new VueRouter({
    {path:'/home/bodycheck',component: BodyCheck},
 
    {path:'/home/shuttle',component: ShuttleSituation},
+   {path:'/home/weather',component: Weather},
+   {path:'/home/introduce',component: Introduce},
   ],
   linkActiveClass:'mui-active'//覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })
