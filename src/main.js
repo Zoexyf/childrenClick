@@ -11,7 +11,9 @@ import app from './App.vue'
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
-
+//引入echart
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
 
 // //导入mint-ui（Header部所使用）
 // import { Header } from 'mint-ui'

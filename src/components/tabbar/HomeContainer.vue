@@ -7,7 +7,7 @@
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/bodycheck">
 		         <img src="../../images/men1.png" alt="">
 		         <div class="mui-media-body">体检报告</div></router-link> </li>
-		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/photoslist">
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/datalist">
 		          <img src="../../images/men2.png" alt="">
 		          <div class="mui-media-body">数据统计</div></router-link></li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodslist">

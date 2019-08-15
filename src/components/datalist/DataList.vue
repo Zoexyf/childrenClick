@@ -1,0 +1,194 @@
+<template>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				
+			</div>
+			<div class="mui-content-padded">
+				<h5>身高体重统计</h5>
+				<div class="chart" id="barChart"></div>
+				<h5>体温统计</h5>
+				<div class="chart" id="lineChart"></div>
+				<h5>饼图示例</h5>
+				<div class="chart" id="pieChart"></div>
+			</div>
+		</div>
+</template>
+
+<script>
+let echarts = require('echarts/lib/echarts')
+
+export default {
+	 data(){
+        return {
+           msg:'it`s echarts'
+        }
+	},
+	mounted(){
+		this.drawLine();
+  	},
+    
+    methods:{
+		drawLine(){
+			 
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+			var barChart = echarts.init(byId('barChart'));
+			barChart.setOption({
+					legend: {
+						data: ['体重', '身高']
+					},
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 20,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['9.01', '9.02', '9.03', '9.04', '9.05', '9.06', '9.07', '9.08', '9.09', '9.10', '9.11', '9.12']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					series: [{
+						name: '体重',
+						type: 'bar',
+						data: [25.5,26.1,26.4,26.7,27.0,26.5,26.8,27.3,27.8,28.0,27.5,28.1]
+					}, {
+						name: '身高',
+						type: 'bar',
+						data: [113.4, 113.4, 113.5, 113.7,113.6,113.9, 113.9, 114.0, 113.9, 113.9, 114.0,114.1]
+					}]
+				});
+			var lineChart = echarts.init(byId('lineChart'));
+			lineChart.setOption({
+					legend: {
+						data: ['体温变化']
+					},
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 20,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['9.01', '9.02', '9.03', '9.04', '9.05', '9.06', '9.07', '9.08', '9.09', '9.10', '9.11', '9.12']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						},
+						min:34,
+						max:40,
+					}],
+					series: [{
+						name: '体温变化',
+						type: 'line',
+						data: [36.5,36.6,37.4,36.8,35.8,36.9,35.7,35.8,36.3,36.7,36.8,37.5]
+					}]
+				});
+			var pieChart = echarts.init(byId('pieChart'));
+			pieChart.setOption({
+					calculable: false,
+					series: [{
+						name: '访问来源',
+						type: 'pie',
+						radius: '65%',
+						center: ['50%', '50%'],
+						data: [{
+							value: 335,
+							name: '直接访问'
+						}, {
+							value: 310,
+							name: '邮件营销'
+						}, {
+							value: 234,
+							name: '联盟广告'
+						}, {
+							value: 135,
+							name: '视频广告'
+						}, {
+							value: 1548,
+							name: '搜索引擎'
+						}]
+					}]
+				});
+			// byId("echarts").addEventListener('tap',function(){
+			// 	var url = this.getAttribute('data-url');
+			// 	plus.runtime.openURL(url);
+			// },false);
+			
+			
+		}
+	} 
+}  
+</script>
+
+<style lang="scss" scoped>
+	.chart {
+		height: 200px;
+		margin: 0px;
+		padding: 0px;
+	}
+	h5 {
+		margin-top: 30px;
+		font-weight: bold;
+	}
+	h5:first-child {
+		margin-top: -8px;
+	}
+
+
+</style>

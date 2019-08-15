@@ -32,7 +32,11 @@
         <td><img src="../../images/hand.png" alt=""></td>
     </tr>
 </table>
-<div class="dateNow">&nbsp;体检时间：{{Date.now()|dateFormatNohm()}}</div>
+<div class="environment">
+    环境监测记录 &nbsp;PM2.5:{{num}} 
+</div>
+<div class="dateNow">&nbsp;更新时间：{{Date.now()|dateFormatNohm()}}</div>
+
 </div>
 
  
@@ -43,7 +47,8 @@ export default {
     data(){
         
         return {
-            name:'徐绎凡'
+            name:'徐绎凡',
+            num:1000
         }
 
     },
@@ -55,8 +60,9 @@ export default {
 
 <style lang="scss" scoped>
 .checkTable{
-    margin: 3px 5px 3px 5px
-}
+    margin: 3px 5px 3px 5px;
+    
+
 
 table{
    
@@ -109,15 +115,19 @@ table{
     }
 
 }
+.environment{
+    height: 30px;
+    margin-top:10px;
+}
 .titleName{
-//    text-align: right;
-    right: 0px;
+    bottom:0px;
+
    
 
 }
 
 
-
+}
 
 </style>
 
