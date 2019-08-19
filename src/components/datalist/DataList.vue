@@ -4,10 +4,12 @@
 				
 			</div>
 			<div class="mui-content-padded">
-				<h5>身高体重统计</h5>
-				<div class="chart" id="barChart"></div>
 				<h5>体温统计</h5>
 				<div class="chart" id="lineChart"></div>
+				<h5>身高统计</h5>
+				<div class="chart" id="barChart"></div>
+				<h5>体重统计</h5>
+				<div class="chart" id="barChart2"></div>
 				<h5>饼图示例</h5>
 				<div class="chart" id="pieChart"></div>
 			</div>
@@ -18,7 +20,7 @@
 let echarts = require('echarts/lib/echarts')
 
 export default {
-	 data(){
+	data(){
         return {
            msg:'it`s echarts'
         }
@@ -29,14 +31,14 @@ export default {
     
     methods:{
 		drawLine(){
-			 
+		 
 			var byId = function(id) {
 				return document.getElementById(id);
 			};
 			var barChart = echarts.init(byId('barChart'));
 			barChart.setOption({
 					legend: {
-						data: ['体重', '身高']
+						data: ['身高']
 					},
 					grid: {
 						x: 35,
@@ -75,18 +77,105 @@ export default {
 						type: 'value',
 						splitArea: {
 							show: true
+						},
+						min:50,
+					
+					}],
+					series: [{
+						name: '身高',
+						type: 'bar',
+						data: [113.4, 113.4, 113.5, 113.7,113.6,113.9, 113.9, 114.0, 113.9, 113.9, 114.0,114.1],
+						itemStyle: {
+							normal: {
+								label: {
+									show: false, //开启显示
+									position: 'top', //在上方显示
+									textStyle: { //数值样式
+										color: 'black',
+										fontSize: 8,
+									}
+								}
+							}
+						},
+					},
+					{
+						name: '体重',
+						type: 'bar',
+						
+					}]
+				});
+			
+			var barChart2 = echarts.init(byId('barChart2'));
+			barChart2.setOption({
+					legend: {
+						data: ['体重']
+					},
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 20,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
 						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['9.01', '9.02', '9.03', '9.04', '9.05', '9.06', '9.07', '9.08', '9.09', '9.10', '9.11', '9.12']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						},
+		
+				
 					}],
 					series: [{
 						name: '体重',
 						type: 'bar',
-						data: [25.5,26.1,26.4,26.7,27.0,26.5,26.8,27.3,27.8,28.0,27.5,28.1]
-					}, {
+						data: [25.5,26.1,26.4,26.7,27.0,26.5,26.8,27.3,27.8,28.0,27.5,28.1],
+						itemStyle: {
+							normal: {
+								label: {
+									show: false, //开启显示
+									position: 'top', //在上方显示
+									textStyle: { //数值样式
+										color: 'black',
+										fontSize: 8,
+									}
+								}
+							}
+						},
+					}, 
+					{
 						name: '身高',
 						type: 'bar',
-						data: [113.4, 113.4, 113.5, 113.7,113.6,113.9, 113.9, 114.0, 113.9, 113.9, 114.0,114.1]
+						
 					}]
 				});
+			
+			
 			var lineChart = echarts.init(byId('lineChart'));
 			lineChart.setOption({
 					legend: {
@@ -136,7 +225,19 @@ export default {
 					series: [{
 						name: '体温变化',
 						type: 'line',
-						data: [36.5,36.6,37.4,36.8,35.8,36.9,35.7,35.8,36.3,36.7,36.8,37.5]
+						data: [36.5,36.6,37.4,36.8,35.8,36.9,35.7,35.8,36.3,36.7,36.8,37.5],
+						itemStyle: {
+							normal: {
+								label: {
+									show: true, //开启显示
+									position: 'top', //在上方显示
+									textStyle: { //数值样式
+										color: 'black',
+										fontSize: 8,
+									}
+								}
+							}
+						},
 					}]
 				});
 			var pieChart = echarts.init(byId('pieChart'));
