@@ -10,7 +10,7 @@
 				<div class="chart" id="barChart"></div>
 				<h5>体重统计</h5>
 				<div class="chart" id="barChart2"></div>
-				<h5>饼图示例</h5>
+				<h5>图像比对</h5>
 				<div class="chart" id="pieChart"></div>
 			</div>
 		</div>
@@ -244,25 +244,25 @@ export default {
 			pieChart.setOption({
 					calculable: false,
 					series: [{
-						name: '访问来源',
+						name: '图片分析',
 						type: 'pie',
 						radius: '65%',
 						center: ['50%', '50%'],
 						data: [{
 							value: 335,
-							name: '直接访问'
+							name: '图像正常'
 						}, {
 							value: 310,
-							name: '邮件营销'
+							name: '手部斑点'
 						}, {
 							value: 234,
-							name: '联盟广告'
+							name: '舌部斑点'
 						}, {
 							value: 135,
-							name: '视频广告'
+							name: '异常情况'
 						}, {
 							value: 1548,
-							name: '搜索引擎'
+							name: '图像分析正常'
 						}]
 					}]
 				});

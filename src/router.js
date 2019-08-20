@@ -9,7 +9,7 @@ import NewsList from './components/news/NewsList.vue'
 import NewsInfo from './components/news/NewsInfo.vue'
 import PhotosList from './components/photos/PhotosList.vue'
 import PhotosInfo from './components/photos/PhotosInfo.vue'
-import GoodsList from './components/goods/GoodsList.vue'
+import StrangeThing from './components/strange/StrangeThing.vue'
 
 import BodyCheck from './components/bodycheck/BodyCheck.vue'
 
@@ -26,12 +26,12 @@ var router = new VueRouter({
    {path:'/home',component: HomeContainer},
    {path:'/member',component: MemberContainer},
    {path:'/cart',component: CartContainer},
-  //  {path:'/search',component: SearchContainer},
+   {path:'/search',component: SearchContainer},
    {path:'/newslist',component: NewsList},
    {path:'/newsinfo/:id',component: NewsInfo},
    {path:'/home/photoslist',component: PhotosList},
    {path:'/home/photosinfo/:id', component: PhotosInfo},
-   {path:'/home/goodslist', component: GoodsList},
+   {path:'/home/strange', component: StrangeThing},
 
   //  {path:'/home/photoslist',component:PhotosList},
 

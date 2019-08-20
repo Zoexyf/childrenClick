@@ -24,13 +24,13 @@
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
-      <router-link class="mui-tab-item-llb" to="/newslist">
+      <router-link class="mui-tab-item-llb" to="/search">
 				<span class="mui-icon mui-icon-search"></span>
-				<span class="mui-tab-label">资讯分享</span>
+				<span class="mui-tab-label">必应搜索</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/cart">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
-				<span class="mui-tab-label">购物车</span>
+				<span class="mui-tab-label">产品介绍</span>
 			</router-link>
 			
       	<router-link class="mui-tab-item-llb" to="/member">

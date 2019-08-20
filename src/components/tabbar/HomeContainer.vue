@@ -10,7 +10,7 @@
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/datalist">
 		          <img src="../../images/men2.png" alt="">
 		          <div class="mui-media-body">数据统计</div></router-link></li>
-		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodslist">
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/strange">
 		         <img src="../../images/men3.png" alt="">
 		        <div class="mui-media-body">可疑情况</div></router-link></li>
                 <!-- <p></p> -->
@@ -23,10 +23,10 @@
 		        <div class="mui-media-body">天气帮手</div></router-link></li>
 		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/introduce">
 		        <img src="../../images/men6.png" alt="">
-		        <div class="mui-media-body">产品介绍</div></router-link></li>
+		        <div class="mui-media-body">待办事项</div></router-link></li>
 	  </ul> 
 
-        <h3>HomeContainer</h3>
+        <!-- <h3>智能儿童晨检机器人</h3> -->
     </div>
 </template>
 

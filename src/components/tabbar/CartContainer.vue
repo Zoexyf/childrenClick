@@ -2,8 +2,8 @@
     <div>
        <section class="todoapp" v-cloak>
 			<header class="header">
-				<h1>todos</h1>
-				<input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" @keyup.enter="addTodo">
+				<h1>待办事项</h1>
+				<input class="new-todo" autofocus autocomplete="off" placeholder="如：查看孩子体检报告" v-model="newTodo" @keyup.enter="addTodo">
 			</header>
 			<section class="main" v-show="todos.length">
 				<input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
@@ -23,20 +23,19 @@
 				<span class="todo-count">
 					<strong v-text="remaining"></strong> {{pluralize('item', remaining)}} left
 				</span>
-				<ul class="filters">
+				<!-- <ul class="filters">
 					<li><a href="#/all" :class="{selected: visibility == 'all'}">All</a></li>
 					<li><a href="#/active" :class="{selected: visibility == 'active'}">Active</a></li>
 					<li><a href="#/completed" :class="{selected: visibility == 'completed'}">Completed</a></li>
-				</ul>
+				</ul> -->
 				<button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
 					Clear completed
 				</button>
 			</footer>
 		</section>
 		<footer class="info">
-			<p>Double-click to edit a todo</p>
-			<p>Written by <a href="http://evanyou.me">Evan You</a></p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			<p>儿童智能晨检机器人</p>
+			
 		</footer>
     </div>
 </template>
@@ -398,12 +397,13 @@ body {
 
 .todoapp h1 {
 	position: absolute;
-	top: -155px;
+	top: -100px;
 	width: 100%;
-	font-size: 100px;
+	font-size: 80px;
 	font-weight: 100;
 	text-align: center;
-	color: rgba(175, 47, 47, 0.15);
+	// color: rgba(175, 47, 47, 0.15);
+	color:rgba(#ffc000,0.35);
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;

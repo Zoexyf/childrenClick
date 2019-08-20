@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>SearchContainer</h3>
+       <iframe src="https://cn.bing.com/" width="100%" height="800px" frameborder="0"></iframe>
     </div>
 </template>
 

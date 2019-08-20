@@ -4,7 +4,7 @@
 <table>
     <tr  class="titleName">
         
-        <td colspan="2"><img src="../../images/picture1.png" alt="">{{ name }}的体检报告</td>
+        <td colspan="2"><img src="../../images/picture1.png" alt="">{{ name }}体检报告</td>
     </tr>
    
     <tr>
@@ -32,9 +32,9 @@
         <td><img src="../../images/hand.png" alt=""></td>
     </tr>
 </table>
-<div class="environment">
+<!-- <div class="environment">
     环境监测记录 &nbsp;PM2.5:{{num}} 
-</div>
+</div> -->
 <div class="dateNow">&nbsp;更新时间：{{Date.now()|dateFormatNohm()}}</div>
 
 </div>
@@ -47,7 +47,7 @@ export default {
     data(){
         
         return {
-            name:'徐绎凡',
+            name:'徐小明',
             num:1000
         }
 
@@ -62,8 +62,6 @@ export default {
 .checkTable{
     margin: 3px 5px 3px 5px;
     
-
-
 table{
    
     box-shadow: 0 1px 2px rgba(0,0,0,.3);
@@ -82,6 +80,7 @@ table{
          //  vertical-align: middle
          background-color: #fff;
          
+         
          img{
              width: 40px;
              height: 60px;
@@ -94,16 +93,20 @@ table{
       border: 3px black;
       height: 50px;
       width: 100%;
-      background-color: rgb(255, 206, 58);
+    //   background-color: rgb(255, 206, 58);
+    background-color: rgba(255, 206, 58, 0.5);
       
       margin: 5px;
       padding: 5px;  
+      font-size: 18px;
+      font-weight: bold;
 
      td{
         border:3px solid white;
         text-align:center;
         width:50%;
-        color:darkslategrey;
+        // color:darkslategrey;
+        color:rgb(83, 83, 83);
    
         img{
             width: 100px;
@@ -123,6 +126,10 @@ table{
     bottom:0px;
 
    
+
+}
+.dateNow{
+    font-weight: bold;
 
 }
 
